@@ -1,0 +1,103 @@
+//---------------------------------------------------------------//
+
+
+//    Синтаксис у SCSS дентичен css, а у SASS синтаксис следующий:
+
+//       .wrapper
+//          color: black            //отступы строгие и обязательные
+//          background-color: blue
+
+
+//---------------------------------------------------------------//
+
+
+//    Вложенности и операторы
+
+//       .grid {
+//          border: 3px solid #d5f37e;
+
+//          &:hover {
+//             //указывает на родительский класс
+//             color: blue;
+//          }
+//       }
+
+
+//---------------------------------------------------------------//
+
+
+//    Переменные  
+
+//       $color_1:#0000;
+//       $color_2:#1e1e1e;
+
+//       .grid {
+//          border: 3px solid $color_1;
+
+
+//---------------------------------------------------------------//
+
+
+//    Импорт стилей
+
+//          @import "reset.scss"
+
+
+//---------------------------------------------------------------//
+
+
+//    Шаблоны
+
+//          * {
+//             margin: 0;
+//             padding: 0;
+//             border: 0;
+//             text-transform: uppercase;
+//             text-align: center;
+
+//             .wrapper {
+//                display: grid;
+//                grid-template-columns: repeat(auto-fill, 1fr);
+//                grid-template-areas: "item1 item2 item2"
+//                   "item5 item4 item3"
+//                   "item6 item4 item7";
+//                max-width: 1200px;
+//                margin: 0 auto;
+//                margin-top: 20px;
+//                @extend %dbborder;                           // подключение шаблона
+//                height: 95vh;
+
+//                .grid {
+//                   @extend %dbborder;                       // подключение шаблона
+//                }
+
+//                .grid__item1 {
+//                   background-color: #f9ca24;
+//                   grid-area: item1;
+//                }
+//             }
+//          }
+
+//          %dbborder {                                       // шаблон
+//             border: 3px solid #d5f37e;
+//          }
+
+//---------------------------------------------------------------//
+
+
+//   Миксы
+
+//          @mixin headder2($a, $b, $c) {     // создание миксина
+//             font-size: $a;
+//             color: $b;
+//             font-weight: $c;
+//          }
+
+//          .grid__item1 {
+//             background-color: #f9ca24;
+//             grid-area: item1;
+//             @include headder2(20px, white, 600);   // вызов миксина
+//          }
+
+
+//---------------------------------------------------------------//
